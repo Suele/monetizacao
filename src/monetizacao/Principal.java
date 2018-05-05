@@ -3,15 +3,19 @@ package monetizacao;
 public class Principal {
 	public static void main(String[] args) {
 
-		Cliente cliente = new Cliente("Maria", "01010101010", "maria@gmail.com");
-		cliente.cadastrar(cliente);
-		System.out.println(cliente.getClientes());
+		Cliente cliente1 = null;
+		Conta conta = new Conta(1111, 1300.0, cliente1);
+		cliente1 = new Cliente("Maria", "111111111", "maria@gmail.com", conta);
 
-		Conta conta = new Conta(123, 1500.0);
-		cliente.setConta(conta);
+		Cliente cliente2 = null;
+		Conta conta1 = new Conta(2222, 1000.0, cliente2);
+		cliente2 = new Cliente("Pedro", "2222222", "pedro@gmail.com", conta1);
 
-		System.out.println("Conta: " + cliente.getConta());
+		Cadastro cadastro = new Cadastro();
+		cadastro.oQue(cliente1);
+		cadastro.oQue(cliente2);
 		
+		System.out.println(cadastro.listaDeClientes());
 		
 	}
 

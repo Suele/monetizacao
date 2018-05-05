@@ -6,22 +6,10 @@ public class Conta {
 	private double saldo;
 	private Cliente cliente;
 
-	public Conta() {
-
-	}
-
 	public Conta(int numero, double saldo, Cliente cliente) {
 		this.numero = numero;
 		this.saldo = saldo;
 		this.cliente = cliente;
-	}
-
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
 	}
 
 	public int getNumero() {
@@ -34,6 +22,22 @@ public class Conta {
 
 	public Cliente getCliente() {
 		return cliente;
+	}
+
+	public boolean depositar(double valor) {
+		if (valor > 0) {
+			this.saldo = this.saldo + valor;
+			return true;
+		} else {
+			System.out.println("O Valor do deposito é inválido!!!");
+			return false;
+		}
+	}
+
+	public double transferePara(Conta minhaConta, Conta outraConta, double valor) {
+
+		valor = minhaConta.getSaldo() - valor;
+		return valor;
 	}
 
 	@Override

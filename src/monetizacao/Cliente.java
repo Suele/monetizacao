@@ -1,6 +1,5 @@
 package monetizacao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
@@ -8,14 +7,17 @@ public class Cliente {
 	private String nome;
 	private String cpf;
 	private String email;
-	private List<Cliente> clientes;
 	private Conta conta;
+	private List<Produto> produtos;
 
-	public Cliente(String nome, String cpf, String email) {
+	public Cliente() {
+	}
+
+	public Cliente(String nome, String cpf, String email, Conta conta) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
-		clientes = new ArrayList<>();
+		this.conta = conta;
 	}
 
 	public String getNome() {
@@ -30,25 +32,17 @@ public class Cliente {
 		return email;
 	}
 
-	public void cadastrar(Cliente cliente) {
-		this.clientes.add(cliente);
-	}
-
-	public List<Cliente> getClientes() {
-		return clientes;
-	}
-
 	public Conta getConta() {
 		return conta;
 	}
 
-	public void setConta(Conta conta) {
-		this.conta = conta;
+	public List<Produto> listaDeProdutos() {
+		return produtos;
 	}
 
 	@Override
 	public String toString() {
-		return "Nome: " + this.nome + ", cpf: " + this.cpf + ", Email: " + this.email;
+		return "Nome: " + this.nome + ", cpf: " + this.cpf + ", Email: " + this.email + "\nConta: " + this.getConta();
 	}
 
 }
