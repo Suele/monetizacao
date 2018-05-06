@@ -5,6 +5,7 @@ public class Produto {
 	private int codigo;
 	private String nome;
 	private double preco;
+	private int quantidade;
 
 	public int getCodigo() {
 		return codigo;
@@ -28,6 +29,19 @@ public class Produto {
 
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	
+	@Override
+	public String toString() {
+		return "Código: " + this.getCodigo() + ", Nome: " + this.getNome() + ", Preço: " + this.getPreco() + ", Quantidade: " + this.quantidade;
 	}
 
 }

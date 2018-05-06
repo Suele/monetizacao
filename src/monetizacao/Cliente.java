@@ -8,6 +8,7 @@ public class Cliente {
 	private String cpf;
 	private String email;
 	private Conta conta;
+	private Produto produto;
 	private List<Produto> produtos;
 
 	public Cliente() {
@@ -36,13 +37,22 @@ public class Cliente {
 		return conta;
 	}
 
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
 	public List<Produto> listaDeProdutos() {
 		return produtos;
 	}
 
 	@Override
 	public String toString() {
-		return "Nome: " + this.nome + ", cpf: " + this.cpf + ", Email: " + this.email + "\nConta: " + this.getConta();
+		return "\nNome: " + this.nome + ", cpf: " + this.cpf + ", Email: " + this.email + "\nConta: " + this.getConta()
+				+ "\nProduto: " + this.getProduto() + " ]\n";
 	}
 
 }
