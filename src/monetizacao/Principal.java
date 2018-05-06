@@ -14,9 +14,13 @@ public class Principal {
 		Cadastro cadastro = new Cadastro();
 		cadastro.oQue(cliente1);
 		cadastro.oQue(cliente2);
-		
+
 		System.out.println(cadastro.listaDeClientes());
 		
+		System.out.println(conta.transferePara(conta1, 120, conta));
+		
+		
+		System.out.println(cadastro.listaDeClientes());
 	}
 
 }

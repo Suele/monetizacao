@@ -34,10 +34,15 @@ public class Conta {
 		}
 	}
 
-	public double transferePara(Conta minhaConta, Conta outraConta, double valor) {
+	public double transferePara(Conta contaDoCliente, double valorDoDeposito, Conta contaDoVendedor) {
+		if (valorDoDeposito < contaDoCliente.saldo && valorDoDeposito > 0) {
+			contaDoCliente.saldo -= valorDoDeposito;
+			return contaDoVendedor.saldo += valorDoDeposito;
+		}else {
+			System.out.println("Valor do deposito incorreto.");
+			return 0;
+		}
 
-		valor = minhaConta.getSaldo() - valor;
-		return valor;
 	}
 
 	@Override
