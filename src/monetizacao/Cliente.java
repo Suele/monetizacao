@@ -50,29 +50,33 @@ public class Cliente {
 	public List<Produto> listaDeProdutos() {
 		return produtos;
 	}
-	
+
 	public void escolhaProdutoPeloCodigo(int codigo) {
 		if (produto.getCodigo() == codigo) {
 			produtoEscolhido(produto);
-		}else {
-			
-		}		
+		} else {
+
+		}
 	}
-	
+
 	public void produtoEscolhido(Produto produto) {
 		this.produtosDoCliente.add(produto);
 	}
-	
+
 	public List<Produto> listaDeProdutosEscolhidos() {
 		return produtosDoCliente;
 
 	}
 
-
 	@Override
 	public String toString() {
-		return "\nNome: " + this.nome + ", cpf: " + this.cpf + ", Email: " + this.email + "\nConta: " + this.getConta()
-				+ "\nProduto: " + this.getProduto() + " ]\n";
+		if (this.getProduto() != null) {
+			return "\nNome: " + this.nome + ", cpf: " + this.cpf + ", Email: " + this.email + "\nConta: "
+					+ this.getConta() + "\nProduto: " + this.getProduto() + " ]\n";
+		} else {
+			return "\nNome: " + this.nome + ", cpf: " + this.cpf + ", Email: " + this.email + "\nConta: "
+					+ this.getConta() + "\nProduto: " + "Nenhum produto adicionado" + " ]\n";
+		}
 	}
 
 }
