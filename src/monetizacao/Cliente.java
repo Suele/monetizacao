@@ -1,5 +1,6 @@
 package monetizacao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
@@ -10,6 +11,7 @@ public class Cliente {
 	private Conta conta;
 	private Produto produto;
 	private List<Produto> produtos;
+	private List<Produto> produtosDoCliente = new ArrayList<>();
 
 	public Cliente() {
 	}
@@ -48,6 +50,24 @@ public class Cliente {
 	public List<Produto> listaDeProdutos() {
 		return produtos;
 	}
+	
+	public void escolhaProdutoPeloCodigo(int codigo) {
+		if (produto.getCodigo() == codigo) {
+			produtoEscolhido(produto);
+		}else {
+			
+		}		
+	}
+	
+	public void produtoEscolhido(Produto produto) {
+		this.produtosDoCliente.add(produto);
+	}
+	
+	public List<Produto> listaDeProdutosEscolhidos() {
+		return produtosDoCliente;
+
+	}
+
 
 	@Override
 	public String toString() {

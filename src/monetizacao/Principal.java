@@ -41,11 +41,17 @@ public class Principal {
 		cliente1.setProduto(p1);
 		cliente2.setProduto(p2);
 		
+		System.out.println("Lista de Tudo");
 		System.out.println(cadastro.listaDeClientes());
 
 		System.out.println("");
 		
+		System.out.println("Lista de Produtos");
 		System.out.println(cadastro.produtosCadastrados());
+		
+		cliente1.escolhaProdutoPeloCodigo(12345);
+		
+		System.out.println(cliente1.listaDeProdutosEscolhidos());
 	}
 
 }

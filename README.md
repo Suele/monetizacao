@@ -1,2 +1,2 @@
 # monetizacao
-Venda de Produtos por MonetizaÃ§Ã£o 
+Venda de Produtos por Monetização
