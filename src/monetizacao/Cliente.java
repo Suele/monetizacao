@@ -51,16 +51,17 @@ public class Cliente {
 		return produtos;
 	}
 
-	public void escolhaProdutoPeloCodigo(int codigo) {
-		if (produto.getCodigo() == codigo) {
-			produtoEscolhido(produto);
-		} else {
-
+	public Produto escolherProduto(int codigoDoProduto, Produto produto) {
+		if(produto.getCodigo() == codigoDoProduto) {
+			return produto;
+		}else {
+			System.out.println("Produto não encontrado");
+			return null;
 		}
 	}
 
-	public void produtoEscolhido(Produto produto) {
-		this.produtosDoCliente.add(produto);
+	public boolean produtoEscolhido(Produto produto) {
+		return this.produtosDoCliente.add(produto);
 	}
 
 	public List<Produto> listaDeProdutosEscolhidos() {

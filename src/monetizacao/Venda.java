@@ -32,10 +32,6 @@ public class Venda {
 		return produto;
 	}
 
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
-
 	public double getTotalDaVenda() {
 		return totalDaVenda;
 	}

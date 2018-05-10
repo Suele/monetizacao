@@ -38,12 +38,12 @@ public class Produto {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "\nCódigo: " + this.getCodigo() + ", Nome: " + this.getNome() + ", Preço: " + this.getPreco() + ", Quantidade: " + this.quantidade + "\n";
+		return "\nCódigo: " + this.getCodigo() + ", Nome: " + this.getNome() + ", Preço: " + this.getPreco() 
+				+ ", Quantidade: " + this.quantidade + "\n";
+
 	}
-	
-	
 
 }
