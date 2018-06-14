@@ -1,5 +1,6 @@
 package monetizacao;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +56,7 @@ public class Cliente {
 		if(produto.getCodigo() == codigoDoProduto) {
 			return produto;
 		}else {
-			System.out.println("Produto não encontrado");
+			System.out.println("Produto nï¿½o encontrado");
 			return null;
 		}
 	}

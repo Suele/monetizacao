@@ -3,6 +3,7 @@ package monetizacao;
 import java.util.Scanner;
 
 public class Principal {
+
 	public static void main(String[] args) {
 
 		Produto p1 = new Produto();
@@ -18,13 +19,13 @@ public class Principal {
 		p2.setQuantidade(1);
 
 		Produto p3 = new Produto();
-		p3.setNome("Câmera Digital Gopro");
+		p3.setNome("Cï¿½mera Digital Gopro");
 		p3.setPreco(1350.0);
 		p3.setCodigo(3333);
 		p3.setQuantidade(1);
 
 		Produto p4 = new Produto();
-		p4.setNome("Leitor de Código de Barras Laser");
+		p4.setNome("Leitor de Cï¿½digo de Barras Laser");
 		p4.setPreco(120.0);
 		p4.setCodigo(4444);
 		p4.setQuantidade(1);
@@ -44,11 +45,9 @@ public class Principal {
 		cadastro.oQue(p5);
 
 		System.out.println(
-				"-----------------------------------------------------------------------------------------------");
-
-		System.out.println("Lista de Produtos\n");
-		System.out.println(cadastro.produtosCadastrados());
-
+				"------------------------------------------------------------------------------------------------");
+		System.out.println(
+				">>>>>>>>>>>>>>> Por Favor Digite qualquer nÃºmero inteiro para que apareÃ§a o menu >>>>>>>>>>>>>>>");
 		System.out.println(
 				"------------------------------------------------------------------------------------------------");
 
@@ -56,7 +55,6 @@ public class Principal {
 		Conta conta = new Conta(1111, 1000.0, cliente1);
 		cliente1 = new Cliente("Maria", "1111111111", "maria@gmail.com", conta);
 		cliente1.escolherProduto(55555, p5);
-		cliente1.listaDeProdutosEscolhidos();
 
 		Cliente cliente2 = null;
 		Conta conta1 = new Conta(2222, 2000.0, cliente2);
@@ -64,7 +62,7 @@ public class Principal {
 
 		Cliente cliente3 = null;
 		Conta conta3 = new Conta(3333, 3000.0, cliente3);
-		cliente3 = new Cliente("José", "3333333333", "jose@gmail.com", conta3);
+		cliente3 = new Cliente("JosÃ©", "3333333333", "jose@gmail.com", conta3);
 
 		Cliente cliente4 = null;
 		Conta conta4 = new Conta(4444, 4000.0, cliente4);
@@ -81,65 +79,176 @@ public class Principal {
 		cadastro.oQue(cliente5);
 
 		System.out.println("");
-		System.out.println("Lista de Clientes\n");
-		System.out.println(cadastro.listaDeClientes());
-		
+
 		Scanner menuP = new Scanner(System.in);
 		int menuPrincipal = menuP.nextInt();
-		int subMenu = 0;
+
 		
+
 		while (menuPrincipal != 5 && menuPrincipal < 5 && menuPrincipal > 0) {
-			
+
 			Cliente cliente = null;
 			Conta conta6 = null;
-			
+			Produto produto = null;
+			Venda venda = null;
 
 			System.out.println("");
 			System.out.println("------------------------------------------------------------------------------");
 			System.out.println("------------------------------------------------------------------------------");
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>  Por Favor Escolha uma opção  >>>>>>>>>>>>>>>>>>>>>>>>>>");
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>  Por Favor Escolha uma OpÃ§Ã£o >>>>>>>>>>>>>>>>>>>>>>>>>>>");
 			System.out.println("------------------------------------------------------------------------------");
 			System.out.println("------------------------------------------------------------------------------");
 			System.out.println(" 1 - Cadastro de Clientes ");
 			System.out.println(" 2 - Cadastro de Produtos ");
 			System.out.println(" 3 - Venda ");
-			System.out.println(" 4 - Relatórios ");
-			System.out.println(" 5 - Saír ");
+			System.out.println(" 4 - RelatÃ³rios ");
+			System.out.println(" 5 - SaÃ­r ");
 			System.out.println("------------------------------------------------------------------------------");
 			System.out.println("------------------------------------------------------------------------------");
 
-			System.out.println("");
-			System.out.println("------------------------------------------------------------------------------");
-			System.out.println(">>>>>>>>>>>>>>>>>  Você está na opção Cadastro de Clientes  >>>>>>>>>>>>>>>>>>");
-			System.out.println("------------------------------------------------------------------------------");
+			Scanner dados1 = new Scanner(System.in);
+			int subMenu = dados1.nextInt();
 
-			Scanner dados = new Scanner(System.in);
-			
+			if (subMenu == 1) {
+				System.out.println("");
+				System.out.println("------------------------------------------------------------------------------");
+				System.out.println(">>>>>>>>>>>>>>>>>  VocÃª estÃ¡ na opÃ§Ã£o Cadastro de Clientes  >>>>>>>>>>>>>>>>>>");
+				System.out.println("------------------------------------------------------------------------------");
+				System.out.println(" 1 - Cadastro ");
+				System.out.println(" 2 - Visualizar Clientes Cadastrados ");
+				System.out.println("------------------------------------------------------------------------------");
 
-			System.out.print("\nNome: ");
-			String nome = dados.nextLine();
-			System.out.print("\nCPF: ");
-			String cpf = dados.nextLine();
-			System.out.print("\nEmail: ");
-			String email = dados.nextLine();
+				Scanner dados = new Scanner(System.in);
+				Scanner dadosSubMenuDoSub1 = new Scanner(System.in);
+				int subMenuDoSub = dadosSubMenuDoSub1.nextInt();
 
-			System.out.print("\nNúmero: ");
-			int numero = dados.nextInt();
+				if (subMenuDoSub == 1) {
+					// declaraÃ§ao das variaveis
+					String nome = null;
+					String cpf = null;
+					String email = null;
+					int numero = 0;
+					double saldo = 0.0;
+					
+					// mostra mensagem e atribui valores para as variaveis
+					System.out.print("\nNome: ");
+					nome = dados.nextLine();
+					System.out.print("\nCPF: ");
+					cpf = dados.nextLine();
+					System.out.print("\nEmail: ");
+					email = dados.nextLine();
+					System.out.print("\nNÃºmero: ");
+					numero = dados.nextInt();
+					System.out.print("\nSaldo: ");
+					saldo = dados.nextDouble();
 
-			 Scanner lerDados = new Scanner(System.in);
-			
-			System.out.print("\nSaldo: ");
-			double saldo = lerDados.nextDouble();
+					// instancia os objetos
+					conta6 = new Conta(numero, saldo, cliente);
+					cliente = new Cliente(nome, cpf, email, conta6);
 
-			conta6 = new Conta(numero, saldo, cliente);
-			cliente = new Cliente(nome, cpf, email, conta6);
-			
-			System.out.println(cliente);
-			System.out.println(conta6);
+					// adiciona o cliente no arrayList
+					cadastro.oQue(cliente);
+				}
+				if (subMenuDoSub == 2) {
+					System.out.println("");
+					System.out.println("------------------------------------------------------------------------------");
+					System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Clientes cadastrados >>>>>>>>>>>>>>>>>>>>>>>>>>>");
+					System.out.println("------------------------------------------------------------------------------");
+					System.out.println(cadastro.listaDeClientes());
+				}
 
-			
+			} else if (subMenu == 2) {
+				System.out.println("");
+				System.out.println("------------------------------------------------------------------------------");
+				System.out.println(">>>>>>>>>>>>>>>>>>> Você está na opção Cadastro de Produtos  >>>>>>>>>>>>>>>>>");
+				System.out.println("------------------------------------------------------------------------------");
+				System.out.println(" 1 - Cadastro ");
+				System.out.println(" 2 - Visualizar Produtos Cadastrados ");
+				System.out.println("------------------------------------------------------------------------------");
+
+				Scanner dados2 = new Scanner(System.in);
+				int subMenuDoSub2 = dados2.nextInt();
+				if (subMenuDoSub2 == 1) {
+
+					produto = new Produto();
+
+					System.out.print("Nome: ");
+					String nome = dados2.nextLine();
+					produto.setNome(nome);
+
+					System.out.print("Código: ");
+					int codigo = dados2.nextInt();
+					produto.setCodigo(codigo);
+
+					System.out.print("Preço: ");
+					double preco = dados2.nextDouble();
+					produto.setPreco(preco);
+
+					System.out.println("Quantidade: ");
+					int quantidade = dados2.nextInt();
+					produto.setQuantidade(quantidade);
+					
+					//adiciona um produto na lista de produto
+					cadastro.oQue(produto);
+				}
+				if(subMenuDoSub2 == 2) {
+					System.out.println("");
+					System.out.println("------------------------------------------------------------------------------");
+					System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> Produtos Cadastrados >>>>>>>>>>>>>>>>>>>>>>>>>>>");
+					System.out.println("------------------------------------------------------------------------------");
+					System.out.println(cadastro.produtosCadastrados());
+					
+				}
+
+			} else if (subMenu == 3) {
+				System.out.println("");
+				System.out.println("------------------------------------------------------------------------------");
+				System.out.println(">>>>>>>>>>>>>>>>>>>>>  Você está na Opção Vendas  >>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+				System.out.println("------------------------------------------------------------------------------");
+				System.out.println(" 1 - Deposito ");
+				System.out.println(" 2 - Transferencia ");
+				System.out.println(" 3 - Vendas ");
+				System.out.println("------------------------------------------------------------------------------");
+
+				Scanner dados3 = new Scanner(System.in);
+				int subMenuDoSub3 = dados3.nextInt();
+				
+				if(subMenuDoSub3 == 1) {
+					System.out.println("");
+					System.out.println("------------------------------------------------------------------------------");
+					System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Deposito  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+					System.out.println("------------------------------------------------------------------------------");
+					
+				}
+				if(subMenuDoSub3 == 2) {
+					System.out.println("");
+					System.out.println("------------------------------------------------------------------------------");
+					System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Transferencia  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+					System.out.println("------------------------------------------------------------------------------");
+					
+				}
+				
+				if(subMenuDoSub3 == 3) {
+					System.out.println("");
+					System.out.println("------------------------------------------------------------------------------");
+					System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Vendas  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+					System.out.println("------------------------------------------------------------------------------");
+					
+				}
+				
+				
+			} else if (subMenu == 4) {
+				System.out.println("");
+				System.out.println("------------------------------------------------------------------------------");
+				System.out.println(">>>>>>>>>>>>>>>>>>>>>>>  Você está na Opção Relatórios >>>>>>>>>>>>>>>>>>>>>>>");
+				System.out.println("------------------------------------------------------------------------------");
+			} else if (subMenu >= 5) {
+				System.out.println("Saindo");
+				break;
+			}
+
 		}
-		
+
 	}
 
 }

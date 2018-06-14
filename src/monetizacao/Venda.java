@@ -1,5 +1,6 @@
 package monetizacao;
 
+
 import java.util.List;
 
 public class Venda {

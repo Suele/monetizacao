@@ -1,5 +1,6 @@
 package monetizacao;
 
+
 public class Produto {
 
 	private int codigo;
@@ -41,7 +42,7 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "\nCódigo: " + this.getCodigo() + ", Nome: " + this.getNome() + ", Preço: " + this.getPreco() 
+		return "\nCï¿½digo: " + this.getCodigo() + ", Nome: " + this.getNome() + ", Preï¿½o: " + this.getPreco() 
 				+ ", Quantidade: " + this.quantidade + "\n";
 
 	}

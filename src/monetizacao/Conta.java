@@ -1,5 +1,6 @@
 package monetizacao;
 
+
 public class Conta {
 
 	private int numero;
@@ -29,7 +30,7 @@ public class Conta {
 			this.saldo = this.saldo + valor;
 			return true;
 		} else {
-			System.out.println("O Valor do deposito é inválido!!!");
+			System.out.println("O Valor do deposito ï¿½ invï¿½lido!!!");
 			return false;
 		}
 	}
@@ -47,7 +48,7 @@ public class Conta {
 
 	@Override
 	public String toString() {
-		return "Número da conta " + getNumero() + ", Saldo: " + getSaldo();
+		return "Nï¿½mero da conta " + getNumero() + ", Saldo: " + getSaldo();
 	}
 
 }
