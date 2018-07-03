@@ -1,16 +1,22 @@
 package br.com.monetizacao.entidades;
 
-import monetizacao.Conta;
-
 public class Cliente {
 
 	private Integer id;
+	private String nome;
 	private String cpf;
 	private String email;
-	private Conta conta;
 
 	public Integer getId() {
 		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getCpf() {
@@ -21,9 +27,6 @@ public class Cliente {
 		return email;
 	}
 
-	public Conta getConta() {
-		return conta;
-	}
 
 	public void setId(Integer id) {
 		this.id = id;
@@ -37,8 +40,5 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public void setConta(Conta conta) {
-		this.conta = conta;
-	}
 
 }
